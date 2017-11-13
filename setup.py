@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
 from setuptools import setup
 
 __package__ = 'mindslab-api-python-client'
 __version__ = '1.0.0-beta'
 
-__license__ = 'Apache 2.0'
+__license__ = 'GPL'
 
 requirements = [
 ]
