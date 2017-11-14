@@ -10,27 +10,20 @@ import json
 import os
 import sys
 
-NLA_STATUS_OK = 'Success'
-NLA_STATUS_FAIL = 'Fail'
+MRC_STATUS_OK = 'Success'
+MRC_STATUS_FAIL = 'Fail'
 
-class MindsNLAClient(MindsAPIClient):
-    ''' Minds API NLA client.
+class MindsMRCClient(MindsAPIClient):
+    ''' Minds API MRC client.
     '''
 
-    def __init__(self,
-                 lang='kr',
-                 level=None,
-                 keyword='8000'):
+    def __init__(self):
 
         # load MindsAPIClient
         super(MindsAPIClient, self).__init__()
 
         # endpoint
-        self.endpoint += 'nla/'
-
-        # nla model
-        self.level = level
-        self.keyword_level = keyword_level
+        self.endpoint += 'mrc/'
 
         # metadata
         self.__version = '0.1.0'
@@ -39,34 +32,18 @@ class MindsNLAClient(MindsAPIClient):
     # public
     #
 
-    def get_model(self):
-        '''
-        '''
-        return dict([
-            ('level', self.level),
-            ('keyword_level', self.keyword_level)
-        ])
-
-    def set_model(self,
-                   level,
-                   keyword_level):
-        '''
-        '''
-        self.level = level
-        self.keyword_level = keyword_level
-
-    def get_nla_result(self,
+    def get_mrc_result(self,
+                       question,
                        sentence,
                        verbose=False):
         '''
         '''
         data = {
-            'cmd': 'runNLA',
+            'cmd': 'runMRC',
             'ID': self.account_id,
             'key': self.account_key,
-            'level': self.level,
-            'keyword_level': self.keyword_level,
-            'sentence': str(sentence)
+            'question': question,
+            'sentence': sentence
         }
         with requests.post(self.endpoint, data=data) as res:
             if res.status_code != 200: return
