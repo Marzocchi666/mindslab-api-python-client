@@ -10,4 +10,5 @@ class TestMindsAPIClient(unittest.TestCase):
 
     def test_client_initialization(self):
         client = MindsAPIClient()
+        self.assertTrue(client != None)
         self.assertTrue(isinstance(client, MindsAPIClient))
