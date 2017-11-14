@@ -31,6 +31,9 @@ class MindsAPIClient(object):
         # version
         self.__version = '1.0.0-beta'
 
+    def __version__(self):
+        return self.__version__
+
     def get_endpoint(self):
         return self.endpoint
 

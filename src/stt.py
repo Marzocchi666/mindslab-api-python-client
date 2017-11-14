@@ -36,9 +36,6 @@ class MindsSTTClient(MindsAPIClient):
         # metadata
         self.__version = '0.2.2'
 
-    def __version__(self):
-        return self.__version
-
     #
     # public
     #
@@ -128,5 +125,5 @@ class MindsSTTClient(MindsAPIClient):
                 status = payload.get('status')
                 data = payload.get('data')
             except: return
-        if verbose: sys.stdout.write('%s\n' % stt_models)
+        if verbose: sys.stdout.write('%s:%s\n' % (status, data))
         return (status, data)
