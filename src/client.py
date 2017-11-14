@@ -14,13 +14,11 @@ class MindsAPIClient(object):
     ]
 
     def __init__(self,
-                 endpoint=None,
                  account_id=None,
-                 account_key=None,
-                 lang='kr'):
+                 account_key=None):
 
         # endpoints
-        self.endpoint = endpoint
+        self.endpoint = 'https://mindsapi.mindslab.ai/api/'
 
         # credentials
         self.account_id = account_id

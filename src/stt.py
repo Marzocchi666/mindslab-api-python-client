@@ -25,13 +25,16 @@ class MindsSTTClient(MindsAPIClient):
         # load MindsAPIClient
         super(MindsAPIClient, self).__init__()
 
+        # endpoint
+        self.endpoint += 'stt/'
+
         # stt model
         self.lang = lang
         self.level = level
         self.sampling = sampling
 
         # metadata
-        self.__version = '0.2.1'
+        self.__version = '0.2.2'
 
     def __version__(self):
         return self.__version
@@ -96,9 +99,9 @@ class MindsSTTClient(MindsAPIClient):
             'level': self.level
         }
         if isinstance(files, basestring):
-            return self.__get_transcription(audio_file=files,
-                                            data=data,
-                                            verbose=verbose)
+            return [ self.__get_transcription(audio_file=files,
+                                              data=data,
+                                              verbose=verbose) ]
         elif isinstance(files, list) or isinstance(files, tuple):
             return [ self.__get_transcription(audio_file=file,
                                               data=data,
