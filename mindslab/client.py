@@ -4,12 +4,6 @@ class MindsAPIClient(object):
     ''' default Minds API client.
     '''
 
-    __slots__ = ['__version__',
-                 'account_id',
-                 'account_key',
-                 'endpoint',
-                 'tag']
-
     def __init__(self,
                  account_id=None,
                  account_key=None):
@@ -27,6 +21,10 @@ class MindsAPIClient(object):
 
         # version
         self.__version__ = '1.0.1'
+
+    def __repr__(self):
+        return "MindsAPIClient(tag='%s', version='%s')" % (
+            self.tag, self.__version__)
 
     def __eq__(self, __object__):
         return isinstance(__object__, self.__class__)

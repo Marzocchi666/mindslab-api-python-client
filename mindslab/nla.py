@@ -22,8 +22,8 @@ class MindsNLAClient(MindsAPIClient):
                  level=None,
                  keyword='8000'):
 
-        # load MindsAPIClient
-        super(MindsAPIClient, self).__init__()
+        # loads super class
+        super(MindsNLAClient, self).__init__()
 
         # endpoint
         self.endpoint += 'nla/'
@@ -33,7 +33,7 @@ class MindsNLAClient(MindsAPIClient):
         self.keyword_level = keyword_level
 
         # metadata
-        self.__version = '0.1.0'
+        self.__version__ = '0.1.0'
 
     #
     # public

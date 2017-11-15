@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .client import MindsAPIClient
+from client import MindsAPIClient
 
 try: import requests
 except ImportError as error: raise error
@@ -22,8 +22,8 @@ class MindsSTTClient(MindsAPIClient):
                  level=None,
                  sampling='8000'):
 
-        # load MindsAPIClient
-        super(MindsAPIClient, self).__init__()
+        # loads super class
+        super(MindsSTTClient, self).__init__()
 
         # endpoint
         self.endpoint += 'stt/'
@@ -34,7 +34,7 @@ class MindsSTTClient(MindsAPIClient):
         self.sampling = sampling
 
         # metadata
-        self.__version = '0.2.2'
+        self.__version__ = '0.2.2'
 
     #
     # public
