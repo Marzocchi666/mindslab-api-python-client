@@ -9,7 +9,7 @@ The MindsLab API client library for Python enables access to MindsLab API such a
 ## Installation
 
 ```bash
-~$ sudo -H pip install mindslab-api-python-client
+~$ sudo pip install mindslab
 ```
 
 ## Usage

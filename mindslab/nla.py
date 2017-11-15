@@ -30,7 +30,7 @@ class MindsNLAClient(MindsAPIClient):
 
         # nla model
         self.level = level
-        self.keyword_level = keyword_level
+        self.keyword_level = keyword
 
         # metadata
         self.__version__ = '0.1.0'

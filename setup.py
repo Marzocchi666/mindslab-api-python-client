@@ -2,11 +2,13 @@
 
 from setuptools import setup
 
-__package__ = 'mindslab-api-python-client'
-__version__ = '1.0.3-beta'
+__package__ = 'mindslab'
+__version__ = '1.0.4-beta'
 __license__ = 'GPL'
 
-install_requirements = []
+install_requirements = [
+    'requests>=2.18.3'
+]
 
 setup(
     name=__package__,
